@@ -1,0 +1,51 @@
+import random
+import time
+
+NUMBER_OF_ELEMENTS = 10000
+
+# create list
+list_1 = list(range(NUMBER_OF_ELEMENTS))
+random.shuffle(list_1)
+
+#create set from the list
+set_1 = set(list_1)
+
+#test if an element is in the set
+start_time = time.time()
+for i in range(NUMBER_OF_ELEMENTS):
+    i in set_1
+
+end_time = time.time()
+
+run_time = int((end_time - start_time) * 10000)
+print("To test if", NUMBER_OF_ELEMENTS, "elements are in the set")
+print("--> THe runtime is", run_time, "milliseconds")
+
+# test if  an element is in the list
+start_time = time.time()
+for i in range(NUMBER_OF_ELEMENTS):
+    i in list_1
+
+end_time = time.time()
+run_time = int((end_time - start_time) * 1000)
+print("\nTo test if", NUMBER_OF_ELEMENTS, "elements are in the list")
+print("--> The runtime is", run_time, "milliseconds")
+
+#remove elements from a set one at at time
+start_time = time.time()
+for i in range (NUMBER_OF_ELEMENTS):
+    set_1.remove(i)
+
+end_time = time.time()
+run_time = int((end_time - start_time) * 1000)
+print("\nTo remove", NUMBER_OF_ELEMENTS, "elements from the set")
+print("--> The runtime is", run_time, "milliseconds")
+
+start_time = time.time()
+for i in range (NUMBER_OF_ELEMENTS):
+    list_1.remove(i)
+
+end_time = time.time()
+run_time = int((end_time - start_time) * 1000)
+print("\nTo remove", NUMBER_OF_ELEMENTS, "elements from the list")
+print("--> The runtime is", run_time, "milliseconds")
